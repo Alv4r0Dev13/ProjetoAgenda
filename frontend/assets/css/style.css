@@ -1,58 +1,91 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-:root {
-  --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(9, 48, 56);
-}
+/* || GENERAL || */
 
 * {
   box-sizing: border-box;
   outline: 0;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --MainText: #000;
+  --NavBg: #043659;
+  --DangerBorder: #c68b8b;
+  --DangerBg: #e3a5a5;
+  --DangerText: #b00;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background: var(--primary-color);
-  font-family: 'Open sans', sans-serif;
-  font-size: 1.3em;
-  line-height: 1.5em;
+  font-size: 2.5rem;
 }
 
-.container {
-  max-width: 640px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
+/* || NAV || */
+
+.nav {
+  padding: 1em;
+  background-color: var(--NavBg);
 }
 
-form input, form label, form button {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-}
-
-form input {
-  font-size: 24px;
-  height: 50px;
-  padding: 0 20px;
-}
-
-form input:focus {
-  outline: 1px solid var(--primary-color);
-}
-
-form button {
-  border: none;
-  background: var(--primary-color);
+.nav a {
   color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  height: 50px;
-  cursor: pointer;
-  margin-top: 30px;
+  text-decoration: none;
 }
 
-form button:hover {
-  background: var(--primary-color-darker);
+/* || MESSAGES || */
+
+.err-msg {
+  padding: .7em 15em;
+  color: var(--DangerText);
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: var(--DangerBg);
+  border: 1px solid var(--DangerBorder);
+  border-radius: 1em;
+  width: fit-content;
+  margin: auto;
+}
+
+/* || CONTENT || */
+
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin: 1.5em 0 .5em;
+}
+
+.subtitle {
+  color: gray;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* || LIST || */
+
+.list-display {
+  margin: 1em 15vw 5vh;
+}
+
+.contact-list {
+  font-size: 2rem;
+  border-collapse: collapse;
+  width: 100%;
+  column-gap: 2em;
+}
+
+th,
+td {
+  text-align: left;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: .5em;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
 }

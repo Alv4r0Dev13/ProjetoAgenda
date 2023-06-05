@@ -4,8 +4,9 @@ const path = require('path');
 // EXPRESS
 const express = require('express');
 const app = express();
-const routes = require(path.resolve(__dirname, 'src', 'routes'));
+const routes = require(path.resolve(__dirname, 'src', 'routes', 'routes'));
 const port = 3000;
+app.use(express.urlencoded({ extended: true }));
 
 // DATABASE
 const mongoose = require('mongoose');
@@ -21,12 +22,8 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.resolve(__dirname, 'public')));
-app.use(helmet());
-
 const sessionOptions = session({
-  secret: 'dandiralidandandandam pararara dandiralidandandandam pararara',
+  secret: 'ambar',
   store: new MongoStore({ mongoUrl: process.env.CONNECTION_STRING }),
   resave: false,
   saveUninitialized: false,
@@ -43,11 +40,13 @@ const helmet = require('helmet');
 const csurf = require('csurf');
 const { checkCsrfError, csrfMiddleware } =
   require(path.resolve(__dirname, 'src', 'middlewares', 'csrfMiddlewares'));
+app.use(helmet());
 app.use(csurf());
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 
 // SERVER
+app.use(express.static(path.resolve(__dirname, 'public')));
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 app.use(routes);

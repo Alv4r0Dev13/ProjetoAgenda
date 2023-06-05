@@ -1,13 +1,30 @@
 <%- include('includes/header') %>
+<%- include('includes/nav') %>
 
-  <section class="container">
-    <h1>Lorem ipsum dolor sit amet</h1>
-    <form action="/" method="post">
-      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-      <label>Cliente</label>
-      <input type="text" name="client">
-      <button>Enviar</button>
-    </form>
-  </section>
+<section class="container">
+  <h1>Agenda</h1>
+  <p class="subtitle">Seus contatos</p>
 
-  <%- include('includes/footer') %>
+  <div class="err-msg">
+    <p>Ocorreu um erro!</p>
+  </div>
+
+  <div class="list-display">
+    <table class="contact-list">
+      <tr class="list-header">
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Telefone</th>
+        <th>Email</th>
+      </tr>
+      <tr class="contact">
+        <td>Álvaro</td>
+        <td>Renan</td>
+        <td>5583991274756</td>
+        <td>alvarorenancf00@gmail.com</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<%- include('includes/footer') %>
