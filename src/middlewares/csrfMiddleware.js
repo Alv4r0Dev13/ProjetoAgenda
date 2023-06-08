@@ -1,5 +1,6 @@
 const checkCsrfError = (err, req, res, next) => {
-  if (err && err.code === 'EBADCSRFTOKEN') return res.render('404');
+  if (err) return res.render('err/404');
+  next();
 };
 
 const csrfMiddleware = (req, res, next) => {

@@ -5,25 +5,17 @@
   <h1>Agenda</h1>
   <p class="subtitle">Seus contatos</p>
 
-  <div class="err-msg">
-    <p>Ocorreu um erro!</p>
-  </div>
-
-  <div class="list-display">
-    <table class="contact-list">
-      <tr class="list-header">
-        <th>Nome</th>
-        <th>Sobrenome</th>
-        <th>Telefone</th>
-        <th>Email</th>
-      </tr>
-      <tr class="contact">
-        <td>Álvaro</td>
-        <td>Renan</td>
-        <td>5583991274756</td>
-        <td>alvarorenancf00@gmail.com</td>
-      </tr>
-    </table>
+  <div class="content">
+    <div class="list-display">
+      <% for (let i = 0; i < 9; i++) { %>
+      <div class="contact overlay">
+        <p>Álvaro</p>
+        <p>Frade</p>
+        <p>+5583991274756</p>
+        <p>alvarorenancf00@gmail.com</p>
+      </div>
+      <% } %>
+    </div>
   </div>
 </section>
 

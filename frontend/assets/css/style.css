@@ -10,9 +10,16 @@
 :root {
   --MainText: #000;
   --NavBg: #043659;
+  --NavLinks: #648aa5;
+  --Background: #f0f0f0;
   --DangerBorder: #c68b8b;
   --DangerBg: #e3a5a5;
   --DangerText: #b00;
+  --SuccessBorder: #8bc68b;
+  --SuccessBg: #a5e5a5;
+  --SuccessText: #0b0;
+  --Shadow: #c0c0c0;
+  --Shadow2: #fff;
 }
 
 html {
@@ -22,18 +29,28 @@ html {
 
 body {
   font-size: 2.5rem;
+  background-color: var(--Background);
 }
 
 /* || NAV || */
 
 .nav {
+  display: flex;
+  justify-content: space-between;
   padding: 1em;
   background-color: var(--NavBg);
 }
 
-.nav a {
+.home {
   color: #fff;
   text-decoration: none;
+}
+
+.nav-links a {
+  font-size: 2rem;
+  color: var(--NavLinks);
+  text-decoration: none;
+  margin-left: 1rem;
 }
 
 /* || MESSAGES || */
@@ -48,10 +65,33 @@ body {
   border: 1px solid var(--DangerBorder);
   border-radius: 1em;
   width: fit-content;
-  margin: auto;
+  margin: 0 auto 2em;
+}
+
+.success-msg {
+  padding: .7em 15em;
+  color: var(--SuccessText);
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  background-color: var(--SuccessBg);
+  border: 1px solid var(--SuccessBorder);
+  border-radius: 1em;
+  width: fit-content;
+  margin: 0 auto 2em;
 }
 
 /* || CONTENT || */
+
+.overlay {
+  box-shadow: 5px 5px 10px var(--Shadow),
+    -5px -5px 10px var(--Shadow2);
+}
+
+.underlay {
+  box-shadow: inset 5px 5px 10px var(--Shadow),
+    inset -5px -5px 10px var(--Shadow2);
+}
 
 h1 {
   font-size: 5rem;
@@ -65,27 +105,6 @@ h1 {
   margin-bottom: 1em;
 }
 
-/* || LIST || */
-
-.list-display {
-  margin: 1em 15vw 5vh;
-}
-
-.contact-list {
-  font-size: 2rem;
-  border-collapse: collapse;
-  width: 100%;
-  column-gap: 2em;
-}
-
-th,
-td {
-  text-align: left;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  padding: .5em;
-}
-
-tr:nth-child(even) {
-  background-color: #ddd;
+.content {
+  font-size: 2.5rem;
 }

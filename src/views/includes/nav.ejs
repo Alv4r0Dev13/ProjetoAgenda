@@ -1,3 +1,11 @@
 <nav class="nav">
   <a href="/" class="home">Agenda</a>
+  <div class="nav-links">
+    <% if (!user) { %>
+    <a href="/login">Entrar</a>
+    <a href="/signin">Criar conta</a>
+    <% } else { %>
+    <a href="/login/logout">Sair</a>
+    <% } %>
+  </div>
 </nav>

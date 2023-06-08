@@ -1,0 +1,21 @@
+<%- include('includes/header') %>
+<%- include('includes/nav') %>
+
+<section class="container">
+  <h1>Crie sua conta</h1>
+
+  <%- include('includes/messages') %>
+
+  <div class="content">
+    <form action="/signin/register" method="POST" class="signin-form form overlay">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <label for="email">Seu email</label>
+      <input type="email" name="email" class="underlay" id="email">
+      <label for="password">Sua senha</label>
+      <input type="password" name="password" class="underlay" id="password">
+      <button type="submit" class="submit overlay">Entrar</button>
+    </form>
+  </div>
+</section>
+
+<%- include('includes/footer') %>
