@@ -1,0 +1,16 @@
+<%- include('includes/header') %>
+<%- include('includes/nav') %>
+
+<section class="content error">
+  <h1>Deletar contato</h1>
+  <p class="subtitle">Tem certeza que deseja deletar o contato?</p>
+  <div class="content">
+    <form action="/contact/delete/<%= id %>" method="post" class="delete-form">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <button type="submit" class="submit btn-danger">Sim, deletar contato</button>
+      <a href="/" class="btn-return">Cancelar</a>
+    </form>
+  </div>
+</section>
+
+<%- include('includes/footer') %>

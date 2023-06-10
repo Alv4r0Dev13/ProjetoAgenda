@@ -33,10 +33,10 @@ const sessionOptions = session({
     httpOnly: true
   }
 });
-const sessionMiddleware = require(path.resolve(__dirname, 'src', 'middlewares', 'sessionMiddleware'));
+const { sessionUser } = require(path.resolve(__dirname, 'src', 'middlewares', 'sessionMiddleware'));
 app.use(sessionOptions);
 app.use(flash());
-app.use(sessionMiddleware);
+app.use(sessionUser);
 
 // User
 const msgMiddleware = require(path.resolve(__dirname, 'src', 'middlewares', 'msgMiddleware'));

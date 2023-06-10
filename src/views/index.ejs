@@ -5,16 +5,20 @@
   <h1>Agenda</h1>
   <p class="subtitle">Seus contatos</p>
 
+  <%- include('includes/messages') %>
+
   <div class="content">
     <div class="list-display">
-      <% for (let i = 0; i < 9; i++) { %>
+      <% contacts.forEach(contact => { %>
       <div class="contact overlay">
-        <p>Álvaro</p>
-        <p>Frade</p>
-        <p>+5583991274756</p>
-        <p>alvarorenancf00@gmail.com</p>
+        <p><%= contact.name %></p>
+        <p><%= contact.lastname %></p>
+        <p><%= contact.tel %></p>
+        <p><%= contact.email %></p>
+        <a href="/contact/edit/<%= contact._id %>" class="contact-action">Editar</a>
+        <a href="/contact/delete/<%= contact._id %>" class="contact-action">Deletar</a>
       </div>
-      <% } %>
+      <% }); %>
     </div>
   </div>
 </section>
