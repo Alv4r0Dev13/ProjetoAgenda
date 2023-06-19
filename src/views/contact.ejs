@@ -7,28 +7,32 @@
   <p class="subtitle">Adicionar um contato na lista</p>
 
   <%- include('includes/messages') %>
-  <form action="/contact/create" method="POST" class="form contact-form overlay">
+  <form action="/contact/create" method="POST" class="form contact-form contact-create overlay">
     <% } else { %>
     <h1>Editar contato</h1>
     <p class="subtitle">Editar informações do contato</p>
     <%- include('includes/messages') %>
-    <form action="/contact/edit/<%= contact._id %>" method="POST" class="form contact-form overlay">
+    <form action="/contact/edit/<%= contact._id %>" method="POST" class="form contact-form contact-edit overlay">
       <% } %>
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
 
       <label for="name">Nome</label>
       <input value="<%= contact.name %>" type="text" name="name" class="underlay" id="name">
+      <small class="input-err-msg hidden" id="name-err">Este campo é obrigatório!</small>
 
       <label for="lastname">Sobrenome</label>
       <input value="<%= contact.lastname %>" type="text" name="lastname" class="underlay" id="lastname">
 
       <label for="email">Email</label>
       <input value="<%= contact.email %>" type="email" name="email" class="underlay" id="email">
+      <small class="input-err-msg hidden" id="email-err">Email inválido!</small>
 
       <label for="tel">Telefone</label>
       <input value="<%= contact.tel %>" type="tel" name="tel" class="underlay" id="tel">
+      <small class="input-err-msg hidden" id="email-tel-err">Preencha o campo Email ou Telefone!</small>
 
       <button type="submit" class="submit overlay">Salvar</button>
+    </form>
 </section>
 
 <%- include('includes/footer') %>

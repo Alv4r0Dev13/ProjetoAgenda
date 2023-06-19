@@ -8,18 +8,28 @@
   <%- include('includes/messages') %>
 
   <div class="content">
-    <div class="list-display">
-      <% contacts.forEach(contact => { %>
-      <div class="contact overlay">
-        <p><%= contact.name %></p>
-        <p><%= contact.lastname %></p>
-        <p><%= contact.tel %></p>
-        <p><%= contact.email %></p>
-        <a href="/contact/edit/<%= contact._id %>" class="contact-action">Editar</a>
-        <a href="/contact/delete/<%= contact._id %>" class="contact-action">Deletar</a>
-      </div>
-      <% }); %>
-    </div>
+    <table class="list-display">
+      <tbody>
+        <% contacts.forEach(contact => { %>
+        <tr class="contact overlay">
+          <td>
+            <p><%= contact.name %></p>
+          </td>
+          <td>
+            <p><%= contact.lastname %></p>
+          </td>
+          <td>
+            <p><%= contact.tel %></p>
+          </td>
+          <td>
+            <p><%= contact.email %></p>
+          </td>
+          <td><a href="/contact/edit/<%= contact._id %>" class="contact-action">Editar</a></td>
+          <td><a href="/contact/delete/<%= contact._id %>" class="contact-action">Deletar</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
   </div>
 </section>
 
