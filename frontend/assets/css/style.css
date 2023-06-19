@@ -93,6 +93,10 @@ body {
     inset -5px -5px 10px var(--Shadow2);
 }
 
+.hidden {
+  display: none;
+}
+
 h1 {
   font-size: 5rem;
   text-align: center;

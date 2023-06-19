@@ -31,3 +31,9 @@
   margin: 2em auto;
   padding: 1em 3em;
 }
+
+.input-err-msg {
+  color: var(--DangerText);
+  font-size: .7em;
+  margin: .5em 1.7em;
+}

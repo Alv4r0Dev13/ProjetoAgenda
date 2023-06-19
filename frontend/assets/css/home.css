@@ -1,12 +1,56 @@
+.create-btn {
+  position: absolute;
+  color: var(--MainText);
+  font-size: 1.5em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  top: 7em;
+  right: 10vw;
+  padding: 0 .3em;
+}
+
 .list-display {
-  margin: 1em 15vw 5vh;
+  border-spacing: 2em;
+  width: calc(100% - 10em);
+  margin: 1em auto;
 }
 
 .contact {
-  display: flex;
-  justify-content: space-between;
   border-radius: 2rem;
-  width: 100%;
-  margin: 2em;
-  padding: 1em 5vw;
+  min-width: calc(100% - 4em);
+  max-width: calc(100% - 4em);
+}
+
+.contact td {
+  text-align: center;
+  padding: .7em 2em;
+}
+
+.contact td:not(.contact td:first-of-type) {
+  padding-left: 0;
+}
+
+.contact td:not(.contact td:last-of-type) {
+  padding-right: 0;
+}
+
+.contact td:nth-of-type(5),
+.contact td:last-of-type {
+  padding-top: calc(.7em - 2px);
+  padding-bottom: calc(.7em - 2px);
+}
+
+.contact-action {
+  font-size: .7em;
+  color: var(--MainText);
+  text-decoration: none;
+  border: 2px solid var(--MainText);
+  border-radius: 1em;
+  padding: .2em .4em;
+}
+
+.ca-delete {
+  color: var(--DangerText);
+  border-color: var(--DangerText);
 }

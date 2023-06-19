@@ -8,6 +8,7 @@
   <%- include('includes/messages') %>
 
   <div class="content">
+    <a href="/contact" class="create-btn overlay" title="Criar contato">+</a>
     <table class="list-display">
       <tbody>
         <% contacts.forEach(contact => { %>
@@ -24,8 +25,12 @@
           <td>
             <p><%= contact.email %></p>
           </td>
-          <td><a href="/contact/edit/<%= contact._id %>" class="contact-action">Editar</a></td>
-          <td><a href="/contact/delete/<%= contact._id %>" class="contact-action">Deletar</a></td>
+          <td>
+            <a href="/contact/edit/<%= contact._id %>" class="contact-action">Editar</a>
+          </td>
+          <td>
+            <a href="/contact/delete/<%= contact._id %>" class="contact-action ca-delete">Deletar</a>
+          </td>
         </tr>
         <% }); %>
       </tbody>
